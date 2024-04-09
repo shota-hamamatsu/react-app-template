@@ -1,0 +1,86 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:storybook/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "react-refresh"
+  ],
+  "rules": {
+    "react-refresh/only-export-components": [
+      "warn",
+      {
+        "allowConstantExport": true
+      }
+    ],
+    "@typescript-eslint/strict-boolean-expressions": [
+      "warn",
+      {
+        "allowString": false,
+        "allowNumber": false,
+        "allowNullableObject": false
+      }
+    ],
+    "no-implicit-coercion": "error",
+    "@typescript-eslint/restrict-plus-operands": [
+      "error",
+      {
+        "checkCompoundAssignments": true,
+        "allowBoolean": false,
+        "allowNullish": false,
+        "allowNumberAndString": false,
+        "allowRegExp": false,
+        "allowAny": false
+      }
+    ],
+    "functional/no-let": [
+      "warn",
+      {
+        "allowInForLoopInit": true,
+        "allowInFunctions": false,
+        "ignorePattern": [
+          "^mut_",
+          "^_mut_",
+          "^#mut_"
+        ]
+      }
+    ],
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/prop-types": "off",
+    "eslint-plugin-import/extensions": [
+      "error",
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+          ".css",
+          ".scss"
+        ],
+        "wasm": "ignorePackages",
+        "json": "ignorePackages",
+        "png": "ignorePackages"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.stories.tsx"
+      ],
+      "rules": {
+        "eslint-plugin-import/no-default-export": "off"
+      }
+    }
+  ]
+}
